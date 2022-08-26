@@ -74,7 +74,7 @@ checklist <- data[ ,c('family', 'genus', 'species', 'infraspecificEpithet',
                       'taxonRank', 'scientificName') ]
 checklist <- data.frame(unique(checklist)) # remove duplicated entries
 
-write.table(checklist, '.csv', sep="\t", row.names=FALSE) 
+write.table(checklist, 'checklist.csv', sep="\t", row.names=FALSE) 
 
 ### Go to Script 2 for taxonomic standardization of this checklist
 
@@ -262,7 +262,7 @@ incorrect_points <- data_1[!GADM_Location == 'SEA', ]
 # 6. Intersect correct records with predefined grid ---------------------------
 
 # Load grid shapefile (Equal Area, width = 100km)
-grid <- read_sf('shapefiles/grid_EA_100km.shp') 
+grid <- read_sf('shapefiles/GRID_EA100.shp') 
 st_crs(grid)
 
 # Transform occurrences into spatial points
