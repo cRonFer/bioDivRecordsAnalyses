@@ -23,7 +23,7 @@ data(adworld) # knowBR needs add world polygon to work
 # Load study area grid shapefile reprojected to CRS WGS84
 grid <- readOGR("gridWgs84Data.shp")
 # Load records
-data <- readRDS('DATA_FINAL')
+data <- readRDS('finalDT')  # Dataset from script 2
 # Filter dataset to only records with consensus species name:
 data <- data[!is.na(sppName), ]
 # Add field of abundance for knowBR

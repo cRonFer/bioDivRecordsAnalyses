@@ -152,5 +152,5 @@ n$p_date <- 1 - n$dupl_date_rec / n$records3
 n$p_recByDate <- 1 - n$dupl_dateRecBy_rec / n$records3 
 
 # Save output
-fwrite(n, '.csv', sep=";")
+fwrite(n, 'quantification.csv', sep=";")
 

@@ -12,11 +12,8 @@
 # Load packages ---------------------------------------------------------
 library(data.table)  # big dataset manipulation
 library(tidyverse)  # data manipulation
-
 library(GADMTools)  # administrative units and GIS
-
 library(CoordinateCleaner)  # data cleaning functions
-
 library(lubridate) # dates
 library(countrycode)  # country names standardization
 # Environment and data ----------------------------------------------------

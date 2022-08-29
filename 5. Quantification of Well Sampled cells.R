@@ -55,4 +55,4 @@ dt[is.na(dt)] <- 0 # Add 0 to NA cells
 dt <- dt %>% mutate(total = d1600 + d1900 + d1970 + d1990 + 
                             d7000 + date + pres + recByDate)
 # Save output
-write.table(dt, '.csv', sep=";", row.names = FALSE)
+write.table(dt, 'countWellSurvey.csv', sep=";", row.names = FALSE)
