@@ -23,7 +23,7 @@ data(adworld) # knowBR needs add world polygon to work
 # Load study area grid shapefile reprojected to CRS WGS84
 grid <- readOGR("gridWgs84Data.shp")
 # Load records
-data <- readRDS('finalDT')  # Dataset from script 2
+data <- readRDS('dataset')  # Dataset from script 2
 # Filter dataset to only records with consensus species name:
 data <- data[!is.na(sppName), ]
 # Add field of abundance for knowBR
@@ -40,10 +40,7 @@ knowbr <- funtion(d = d){
 # Filtering Preserved Specimen records####
 dir.create('presSp')
 setwd("presSp") 
-d <- data[basisOfRecord =='PRESERVED_SPECIMEN'| basisOfRecord =='preservedspecimen'|
-          basisOfRecord =='Preserved Specimen'| basisOfRecord =='specimen'|
-          basisOfRecord =='PreservedSpecimen'| basisOfRecord =='Preservedspecimen'|
-          basisOfRecord == 'in specimen envelope',][, c('sppName','decimalLongitude','decimalLatitude','abundance')]
+d <- data[basisOfRecordRev =='PRESERVED_SPECIMEN',][, c('sppName','decimalLongitude','decimalLatitude','abundance')]
 knowbr()
 
 # Filtering by Temporal Coverage different ranges ####
@@ -96,10 +93,12 @@ knowbr()
 # Combination of filters - Section 4 ####
 # A. Records collected after 1970 and delete duplicates by date of collection
 d <- data[year >= 1970, ][, c('id','sppName', 
-                            'decimalLongitude', 'decimalLatitude',
-                             'date','abundance')]
-d <- cc_dupl(d, lon = "decimalLongitude", lat = "decimalLatitude",
-                     species = "sppName", additions = 'date')
+                              'decimalLongitude', 'decimalLatitude',
+                              'date','abundance')]
+d <- cc_dupl(d, lon = "decimalLongitude", 
+                lat = "decimalLatitude",
+                species = "sppName", 
+                additions = 'date')
 d <- d[, c('sppName', 'decimalLongitude', 'decimalLatitude','abundance')]
 
 setwd(wd) 
@@ -108,14 +107,14 @@ setwd('dupl1970')
 knowbr()
 
 # B. Filtering Preserved specimens without duplicates by date of collection
-d <- data[basisOfRecord =='PRESERVED_SPECIMEN' | basisOfRecord =='preservedspecimen'|
-          basisOfRecord =='Preserved Specimen'| basisOfRecord == 'in specimen envelope'|
-          basisOfRecord =='PreservedSpecimen'| basisOfRecord =='Preservedspecimen'|
-          basisOfRecord =='specimen', ][, c('id','sppName',  'date','abundance',
-                                        'decimalLongitude', 'decimalLatitude')]
+d <- data[basisOfRecordRev =='PRESERVED_SPECIMEN', ][, c('id','sppName','date',
+                                                         'abundance','decimalLongitude', 
+                                                         'decimalLatitude')]
 
-d <- cc_dupl(d, lon = "decimalLongitude", lat = "decimalLatitude",
-                     species = "sppName", additions = 'date')
+d <- cc_dupl(d, lon = "decimalLongitude", 
+                lat = "decimalLatitude",
+                species = "sppName", 
+                additions = 'date')
 d <- d[, c('sppName', 'decimalLongitude', 'decimalLatitude','abundance')]
 
 setwd(wd)
@@ -129,8 +128,10 @@ data$abundance <- 1
 d <- data[year >=1970, ][, c('id','tnrs_accepted_species', 
                             'decimalLongitude', 'decimalLatitude',
                             'date','abundance')]
-d <- cc_dupl (d, lon = "decimalLongitude", lat = "decimalLatitude",
-                     species = "tnrs_accepted_species", additions = 'date')
+d <- cc_dupl (d, lon = "decimalLongitude", 
+                 lat = "decimalLatitude",
+                 species = "tnrs_accepted_species", 
+                 additions = 'date')
 d <- d[, c('tnrs_accepted_species', 'decimalLongitude', 'decimalLatitude','abundance')]
 
 setwd(wd)

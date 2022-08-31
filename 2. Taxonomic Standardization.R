@@ -260,4 +260,4 @@ checklist2$sppName <- paste0(sppName3, sppName4, sppName5)
 # Join to records and save the output ----
 data <- data_correct[checklist2, on = .(scientificName = scientificName)]
 
-saveRDS(data, 'finalDT')
+saveRDS(data, 'dataset')

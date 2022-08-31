@@ -18,7 +18,7 @@ rm(list = ls(all.names = TRUE))
 wd <- ''  # Write working directory path
 setwd(wd)
 
-data <- readRDS('finalDT')  # Dataset from script 2
+data <- readRDS('dataset')  # Dataset from script 2
 # Filter dataset to only records with consensus species name:
 data_cons <- data[!is.na(sppName), ]
 
@@ -32,15 +32,9 @@ n <- data_cons[, .(richness3 = uniqueN(sppName)), by = id][n, on = .(id = id)]
 
 ### Filter Preserved specimens records ####
 # Number of records
-n <- data_cons[basisOfRecord =='PRESERVED_SPECIMEN' | basisOfRecord =='preservedspecimen'|
-               basisOfRecord =='Preserved Specimen' | basisOfRecord =='specimen'|
-               basisOfRecord =='PreservedSpecimen' | basisOfRecord =='Preservedspecimen'|
-               basisOfRecord == 'in specimen envelope', ][ , .(recordsPres3 = .N), by = id][n, on = .(id = id)]
+n <- data_cons[basisOfRecordRev =='PRESERVED_SPECIMEN', ][ , .(recordsPres3 = .N), by = id][n, on = .(id = id)]
 # Number of observed species
-n <- data_cons[basisOfRecord =='PRESERVED_SPECIMEN' | basisOfRecord =='preservedspecimen'|
-               basisOfRecord =='Preserved Specimen' | basisOfRecord =='specimen'|
-               basisOfRecord =='PreservedSpecimen' | basisOfRecord =='Preservedspecimen'|
-               basisOfRecord == 'in specimen envelope', ][ , .(richnessPres3 = uniqueN(sppName)), by = id][n, on = .(id = id)]
+n <- data_cons[basisOfRecordRev =='PRESERVED_SPECIMEN', ][ , .(richnessPres3 = uniqueN(sppName)), by = id][n, on = .(id = id)]
 
 n[is.na(n)] <- 0 # assign 0 to cells with no data (NA)
 
@@ -93,7 +87,7 @@ n <- data[gbif_status == 'ACCEPTED' |
 #### *TPL*
 unique(data$TPL_taxonStatus)
 # Number of observed species
-n <- data[TPL_taxonStatus == 'Accepted', ][, .(tpl_rich = uniqueN(TPL_speciesName)), by = id][n, on = .(id = id)]
+n <- data[TPL_taxonStatus == 'accepted', ][, .(tpl_rich = uniqueN(TPL_speciesName)), by = id][n, on = .(id = id)]
 
 #### *TNRS*
 unique(data$tnrs_status)
@@ -104,13 +98,13 @@ n <- data[tnrs_status == 'Accepted' |
 #### *TROPICOS*
 unique(data$Tropicos_taxonomic_status)
 # Number of observed species
-n <- data[Tropicos_taxonomic_status == 'Accepted' |
-          Tropicos_taxonomic_status == 'Synonym', ][, .(trop_rich = uniqueN(Tropicos_Accepted_species)), by = id][n, on = .(id = id)]
+n <- data[Tropicos_taxonomic_status == 'accepted' |
+          Tropicos_taxonomic_status == 'synonym', ][, .(trop_rich = uniqueN(Tropicos_Accepted_species)), by = id][n, on = .(id = id)]
 
 #### *WFO*
 unique(data$wfo_taxonomicStatus)
 # Number of observed species
-n <- data[wfo_taxonomicStatus == 'ACCEPTED', ][, .(WFO_rich = uniqueN(wfo_acceptedName)), by = id][n, on = .(id = id)]
+n <- data[wfo_taxonomicStatus == 'accepted', ][, .(WFO_rich = uniqueN(wfo_acceptedName)), by = id][n, on = .(id = id)]
 
 # Taxonomic variations of each source against taxon. consensus observed species
 n[is.na(n)] <- 0 # assign 0 to cells with no data (NA)

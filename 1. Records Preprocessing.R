@@ -81,7 +81,7 @@ write.table(checklist, 'checklist.csv', sep="\t", row.names=FALSE)
 data <- data[decimalLatitude!=0 & decimalLongitude!=0, ][decimalLatitude!=decimalLongitude, ]
 
 # 2. Check coordinates precision: ----
-# Here decimal digits of coordinates as a measure of precision 
+# Number of decimal digits of coordinates as a measure of precision 
 
 ## Function to count number of decimals:
 decimal.num.count <- function(x) {
@@ -130,11 +130,12 @@ data <- data[, 1:23]
 # 4. Check if coordinates are placed in the assigned country ---- 
 # Point in polygon by country analysis
 
-# Import gpkg of the world with Adm. Units borders at country level (GADM):
-countries <- read_sf('gis_layers/gadm36_levels.gpkg')
+# Import a shapefile of the study area with Adm. Units borders at country level 
+# Download world shapefile from https://gadm.org/download_world.html
+countries <- read_sf('.gpkg')
 # Set the correct projection
 st_crs(countries) <- "+proj=longlat +datum=WGS84 +no_defs"
-countries$GID_0 <- NULL  # keep only 'Name_0' (country names of GADM)
+
 # Transform occurrences into spatial points and project:
 data$x <- data$decimalLongitude
 data$y <- data$decimalLatitude
