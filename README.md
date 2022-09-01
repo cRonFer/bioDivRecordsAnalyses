@@ -3,6 +3,7 @@ This repository contains R Scripts to perform and reproduce all the analyses and
 It also includes the shapefiles and data used.
 Download the dataset (and metadata) obtained in this work in *DOIX*
 
+# Workflow
 The following **diagram** describes the workflow in which the scripts are organized to reproduce the methods section of Ronquillo et al. XXXX.
 
 ```mermaid
