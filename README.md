@@ -1,10 +1,10 @@
 # bioDivRecordsAnalyses
-This repository contains R Scripts to perform and reproduce all the analyses and figures of Ronquillo et al. XXXX. 
+This repository contains R Scripts to perform and reproduce all the analyses and figures of 'Assessing how different data cleaning criteria affect geographical distribution of mosses biodiversity information' by Ronquillo et al. (in prep) 
 It also includes the shapefiles and data used.
-Download the dataset (and metadata) obtained in this work in *DOIX*
+Download the dataset 'tempNorthBryo - mosses occurrences dataset from the temperate region of the north hemisphere' of this work in https://doi.org/10.20350/digitalCSIC/14794
 
 # Workflow
-The following **diagram** describes the workflow in which the scripts are organized to reproduce the methods section of Ronquillo et al. XXXX.
+The following **diagram** describes the workflow in which the scripts are organized to reproduce the methods sections of the paper.
 
 ```mermaid
 flowchart TD;
