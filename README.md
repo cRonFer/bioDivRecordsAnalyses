@@ -1,5 +1,5 @@
 # bioDivRecordsAnalyses
-This repository contains R Scripts to perform and reproduce all the analyses and figures of 'Assessing how different data cleaning criteria affect geographical distribution of moss biodiversity information' by Ronquillo et al. (in prep) 
+This repository contains R Scripts to perform and reproduce all the analyses and figures of 'Data curation criteria effects on the observed geographical distribution of Bryopsida biodiversity information.' by Ronquillo et al. (in prep) 
 It also includes the shapefiles and data used.
 Download the dataset 'tempNorthBryo - mosses occurrences dataset from the temperate region of the north hemisphere' of this work in https://doi.org/10.20350/digitalCSIC/14794
 
