@@ -1,7 +1,3 @@
-###======================================================### 
-###     Download and Pre-Processing records from BIEN    ###
-###              By Cristina Ronquillo 2022              ###
-###======================================================### 
 
 #### The following script contains the previous steps for download clean 
 #### and filter biodiversity records obtained from BIEN database.
