@@ -1,8 +1,3 @@
-###======================================================### 
-###             Piecewise regression analysis            ###
-###              By Cristina Ronquillo 2022              ###
-###======================================================### 
-
 # The following script describe how to calculate piecewise regressions 
 # and breakpoints of the latitudinal gradient of richness
 # for well-sampled cells.
