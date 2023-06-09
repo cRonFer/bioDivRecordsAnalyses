@@ -1,7 +1,3 @@
-###======================================================### 
-###          Pre-Processing occurrences records          ###
-###              By Cristina Ronquillo 2022              ###
-###======================================================### 
 
 #### The following script contains basic steps for clean and filter
 #### biodiversity records after the downloading process.
@@ -166,7 +162,7 @@ data$countryName[data$countryName == "Svalbard & Jan Mayen"] <- 'Svalbard and Ja
 data$countryName[data$countryName == "Eswatini"] <- "Swaziland"
 data$countryName[data$countryName == "St. Pierre & Miquelon"] <- "Saint Pierre and Miquelon"
 data$countryName[data$countryName == "Turks & Caicos Islands"] <- "Turks and Caicos Islands"
-data$countryName[data$countryName == "Åland Islands"] <- "Finland"
+data$countryName[data$countryName == "Ã…land Islands"] <- "Finland"
 data$countryName[data$countryName == "Palestinian Territories"] <- "Israel"
 data$countryName[data$countryName == "Myanmar (Burma)"] <- "Myanmar"
 data$countryName[data$countryName == "North Macedonia"] <- "Macedonia"
@@ -174,7 +170,7 @@ data$countryName[data$countryName == "Hong Kong SAR China"] <- "Hong Kong"
 data$countryName[data$countryName == "Bosnia & Herzegovina"] <- "Bosnia and Herzegovina"
 
 data$GADM_Location[data$GADM_Location == "Akrotiri and Dhekelia"] <- "Cyprus"
-data$GADM_Location[data$GADM_Location == "Åland"] <- "Finland"
+data$GADM_Location[data$GADM_Location == "Ã…land"] <- "Finland"
 data$GADM_Location[data$GADM_Location == "Palestina"] <- "Israel"
 data$GADM_Location[data$GADM_Location == "Northern Cyprus"] <- "Cyprus"
 
@@ -235,7 +231,7 @@ setnames(datapoints, "NAME_0", "Coastal_Country")
 unique(datapoints$Coastal_Country)
 
 # Transform some country names:
-datapoints$Coastal_Country[datapoints$Coastal_Country == "Åland"] <- "Finland"
+datapoints$Coastal_Country[datapoints$Coastal_Country == "Ã…land"] <- "Finland"
 datapoints$Coastal_Country[datapoints$Coastal_Country == "St. Pierre and Miquelon"] <- "St. Pierre & Miquelon"
 datapoints$Coastal_Country[datapoints$Coastal_Country == "Turks and Caicos Islands"] <- "Turks & Caicos Islands"
 datapoints$Coastal_Country[datapoints$Coastal_Country == "Isle of Man"] <- "United Kingdom"
