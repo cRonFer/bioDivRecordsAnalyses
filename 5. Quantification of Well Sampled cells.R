@@ -1,8 +1,3 @@
-###======================================================### 
-###         Quantification of well-surveyed cells        ###
-###              By Cristina Ronquillo 2022              ###
-###======================================================### 
-
 ### The following script describe the steps to quantify the number of
 ### well-sampled cells after the inventory completeness analyses of each
 ### filter considered
