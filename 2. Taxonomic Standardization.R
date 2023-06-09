@@ -1,7 +1,3 @@
-###======================================================### 
-###         Taxonomical standardization of records       ###
-###              By Cristina Ronquillo 2022              ###
-###======================================================### 
 
 #### The following script contains the code to standardize the scientific
 #### names of Bryopsida.
