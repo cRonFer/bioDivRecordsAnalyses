@@ -1,8 +1,3 @@
-###======================================================### 
-###                   Code for Figures                   ###
-###              By Cristina Ronquillo 2022              ###
-###======================================================### 
-
 # The following script describe how to create figures and of the paper
 
 # Load packages ---------------------------------------------------------
