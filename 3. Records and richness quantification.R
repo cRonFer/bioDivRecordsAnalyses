@@ -1,7 +1,3 @@
-###======================================================### 
-###                 Quantitative analysis                ###
-###              By Cristina Ronquillo 2022              ###
-###======================================================### 
 
 #### The following script contains the code necessary to
 #### the quantification of records and observed number of species by cell 
