@@ -1,7 +1,3 @@
-###======================================================### 
-###        Pre-Processing records from iDigBio           ###
-###              By Cristina Ronquillo 2022              ###
-###======================================================### 
 
 #### The following script contains the previous steps for clean and filter
 #### biodiversity records obtained from iDigBio database..
