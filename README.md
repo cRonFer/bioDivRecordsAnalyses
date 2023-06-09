@@ -1,7 +1,7 @@
 # bioDivRecordsAnalyses
 This repository contains R Scripts to perform and reproduce all the analyses and figures of 'Exploring the impact of data curation criteria on the observed geographical distribution of mosses'
 It also includes the shapefiles and data used.
-Download the dataset 'tempNorthBryo - mosses occurrences dataset from the temperate region of the north hemisphere' of this work in https://doi.org/10.20350/digitalCSIC/14794
+
 
 # Workflow
 The following **diagram** describes the workflow in which the scripts are organized to reproduce the methods sections of the paper.
