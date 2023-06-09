@@ -1,8 +1,3 @@
-###======================================================### 
-###           Inventory Completeness analyses            ###
-###              By Cristina Ronquillo 2022              ###
-###======================================================### 
-
 ### In the following script you will find detailed steps to calculate 
 ### inventory completeness values for records by cell
 ### using KnowBR package and perform in each scenario
