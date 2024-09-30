@@ -29,13 +29,7 @@ flowchart TD;
   
   L --> N(6. Piecewise Regression Analyses - \n Latitudinal Gradient);
   
-  style A fill:#d67da9, stroke:#333,stroke-width:2px,color:#fff;
-  style E fill:#d67da9, stroke:#333,stroke-width:2px,color:#fff;
-  style F fill:#d67da9, stroke:#333,stroke-width:2px,color:#fff;
-  style H fill:#f9e4a6, stroke:#333,stroke-width:2px,color:#333;
-  style L fill:#f9e4a6, stroke:#333,stroke-width:2px,color:#333;
-  style C fill:#c4b1ee, stroke:#c4b1ee,stroke-width:2px,color:#fff;
-  style D fill:#c4b1ee, stroke:#c4b1ee,stroke-width:2px,color:#fff;
+  
     
   subgraph Raw datasets of records occurrences by biodiversity database
   A & E & F
